@@ -17,15 +17,27 @@ async function init() {
 
         img.src = product.img;
         h5.textContent = product.name;
-        p.textContent = product.price;
+        p.textContent = product.price + " Ft";
         a.textContent = "Reservation";
 
         div.classList.add("card");
+        div.classList.add("col-md-6")
+        div.classList.add("col-lg-4")
         divBody.classList.add("card-body");
         h5.classList.add("card-title")
         p.classList.add("card-text");
         a.classList.add("btn");
         a.classList.add("btn-primary");
+
+        a.addEventListener('click', function() {
+            const alert = document.getElementById("alert");
+            alert.textContent = "Successful reservation"
+            alert.style.backgroundColor = "green";
+            setTimeout(function() {
+                alert.textContent = ""
+                alert.style.backgroundColor = null;
+            }, 3000);
+        });
         
         divBody.appendChild(h5);
         divBody.appendChild(p);
