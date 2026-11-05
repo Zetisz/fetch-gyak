@@ -30,12 +30,9 @@ async function init() {
         a.classList.add("btn-primary");
 
         a.addEventListener('click', function() {
-            const alert = document.getElementById("alert");
-            alert.textContent = "Successful reservation"
-            alert.style.backgroundColor = "green";
-            setTimeout(function() {
-                alert.textContent = ""
-                alert.style.backgroundColor = null;
+            document.getElementById("alert").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("alert").style.display = "none";
             }, 3000);
         });
         
